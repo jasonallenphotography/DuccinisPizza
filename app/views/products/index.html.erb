@@ -1,2 +1,153 @@
-<h1>Products#index</h1>
-<p>Find me in app/views/products/index.html.erb</p>
+<div class="jumbotron" id="menu_bg_img">
+  <h1>Our Menu!</h1>
+  <p>We're the oldest pizza delivery in Adams Morgan - since 1988.</p>
+  <p>Fresh ingredients, fast delivery, full bellies! That's our promise to you.</p>
+</div>
+
+<div class="row">
+  <div class="col-md-8 col-lg-9">
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel panel-default">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                  <strong>Salads</strong>
+              </h4>
+            </div>
+          </a>
+        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            <div class="row">
+              <% @salads.each do |product| %>
+                <div class="col-md-6">
+                  <%= render "product_row", product: product, order_item: @order_item %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <div class="panel-heading" role="tab" id="headingTwo">
+            <h4 class="panel-title">
+                <strong>Sides</strong>
+            </h4>
+          </div>
+        </a>
+        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            <div class="row">
+              <% @sides.each do |product| %>
+                <div class="col-md-6">
+                  <%= render "product_row", product: product, order_item: @order_item %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          <div class="panel-heading" role="tab" id="headingThree">
+            <h4 class="panel-title">
+                <strong>Wings </strong>
+            </h4>
+          </div>
+        </a>
+        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            <div class="row">
+              <% @wings.each do |product| %>
+                <div class="col-md-6">
+                  <%= render "product_row", product: product, order_item: @order_item %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseTwo">
+          <div class="panel-heading" role="tab" id="headingTwo">
+            <h4 class="panel-title">
+                <strong>Pizza</strong>
+            </h4>
+          </div>
+        </a>
+        <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            <div class="row">
+              <% @pizzas.each do |product| %>
+                <div class="col-md-6">
+                  <%= render "product_row", product: product, order_item: @order_item %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseTwo">
+          <div class="panel-heading" role="tab" id="headingTwo">
+            <h4 class="panel-title">
+                <strong>Subs</strong>
+            </h4>
+          </div>
+        </a>
+        <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            <div class="row">
+              <% @subs.each do |product| %>
+                <div class="col-md-6">
+                  <%= render "product_row", product: product, order_item: @order_item %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-lg-3">
+    <p>1778 U St NW<br>
+    Washington, DC 20009</p>
+     <p>(202) 483-0007</p>
+
+    <table>
+      <tr>
+        <td>Monday</td>
+        <td>11:00 AM - 01:00 AM</td>
+      </tr>
+      <tr>
+        <td>Tuesday</td>
+        <td>11:00 AM - 01:00 AM</td>
+      </tr>
+      <tr>
+        <td>Wednesday</td>
+        <td>11:00 AM - 01:00 AM</td>
+      </tr>
+      <tr>
+        <td>Thursday</td>
+        <td>11:00 AM - 01:00 AM</td>
+      </tr>
+      <tr>
+        <td>Friday</td>
+        <td>11:00 AM - 02:00 AM</td>
+      </tr>
+      <tr>
+        <td>Saturday</td>
+        <td>11:00 AM - 02:00 AM</td>
+      </tr>
+      <tr>
+        <td>Sunday</td>
+        <td>11:00 AM - 01:00 AM</td>
+      </tr>
+    </table><br>
+    <p>Minimum Order: $10.00<br>
+    Maximum Distance: 3.0 Miles<br>
+    Delivery Charge: FREE!<br>
+    Late orders must be placed before closing.</p>
+  </div>
+</div>
