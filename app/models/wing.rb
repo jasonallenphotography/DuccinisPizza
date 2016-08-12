@@ -1,0 +1,2 @@
+class Wing < Product
+end
