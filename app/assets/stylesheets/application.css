@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+body {
+  padding-top: 75px;
+}
+
+#menu_bg_img {
+  color: white;
+  height:400px;
+  background-image: url("/assets/pizza_bg1.jpg");
+  text-shadow: 1px 1px #000;
+}
