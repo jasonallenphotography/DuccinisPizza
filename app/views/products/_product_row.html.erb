@@ -1,18 +1,23 @@
 <div class="well well-sm">
   <div class="row">
-
     <div class="col-sm-12">
-      <strong><%= product.name %></small></strong>
-      <% if product.description %>
-        <p><%= product.description %></p>
-      <% end %>
+      <strong><%= product.name %></strong>
     </div>
+  </div>
+<% if product.description %>
+  <div class="row">
+    <div class="col-sm-12">
+      <p><%= product.description %></p>
+    </div>
+  </div>
+<% end %>
 
-    <div class="col-lg-6">
-      <%= form_for order_item, remote: true do |f| %>
-      Price: <span style="color: green"><%= number_to_currency product.price %></span>
+<%= form_for order_item, remote: true do |f| %>
+  <div class="row">
+    <div class="col-sm-12">
+      <h5>Price: <span style="color: green"><%= number_to_currency product.price %></span></h5>
     </div>
-    <div class="col-lg-6">
+    <div class="col-xs-6 col-sm-4 col-md-9 col-lg-6">
         <div class="input-group">
           <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
           <div class="input-group-btn">
@@ -20,8 +25,7 @@
             <%= f.submit "Add to Cart", class: "btn btn-primary" %>
           </div>
         </div>
-      <% end %>
     </div>
-
   </div>
+<% end %>
 </div>
