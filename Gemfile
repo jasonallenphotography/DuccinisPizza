@@ -27,6 +27,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Google OmniAuth for login
 gem "omniauth-google-oauth2"
 
+# Use Active Merchant for credit card handling
+gem 'activemerchant', '~> 1.46.0'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
