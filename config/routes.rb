@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'payments/index'
+
+  get 'payments/new'
+
+  get 'payments/create'
+
   get 'auth/failure', to: redirect('/')
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'signout', to: 'sessions#destroy', as: 'signout'
