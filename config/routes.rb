@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
+  resources :payments, only: [:index, :new, :create]
+
   get 'auth/failure', to: redirect('/')
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
   resources :sessions, only: [:create, :destroy]
   # resource :home, only: [:show]
-
   resources :products, only: [:index]
   resource :cart, only: [:show]
   get 'carts/show'
