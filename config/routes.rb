@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:create, :destroy]
   # resource :home, only: [:show]
-
+  resources :payments, only: [:index, :new, :create]
   resources :products, only: [:index]
   resource :cart, only: [:show]
   get 'carts/show'
