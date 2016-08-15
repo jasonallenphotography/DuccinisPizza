@@ -25,19 +25,37 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="/" class="navbar-brand"><img src="/assets/duccinis_logo_300px.jpg" width="90"></a>
+        <a href="/" class="navbar-brand">Duccini's</a>
       </div>
 
       <div class="collapse navbar-collapse" id="navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <% if current_user %>
-            <li class="btn btn-success" type="button"><a href="/cart" class="cart-text" >
-              <%= render "layouts/cart_text" %>
-            </a></li>
-            <li class="btn btn-warning" type="button"><a href="/users/<%= current_user.id %>" >My Account</a></li>
-            <li class="btn btn-danger" type="button" ><a href="/signout"  >Log Out</a></li>
+
+            <li>
+              <a class="btn btn-success cart-text" type="button" href="/cart" >
+                <%= render "layouts/cart_text" %>
+              </a>
+            </li>
+            <li>
+              <a class="btn btn-warning" type="button" href="/users/<%= current_user.id %>" >
+                My Account
+              </a>
+            </li>
+            <li>
+              <a class="btn btn-danger" type="button" href="/signout"  >
+                Log Out
+              </a>
+            </li>
+
           <% else %>
-            <li class="btn btn-warning" type="button"><a href="/auth/google_oauth2" >Log In With Google</a></li>
+          
+            <li>
+              <a class="btn btn-warning" type="button"href="/auth/google_oauth2" >
+                Log In With Google
+              </a>
+            </li>
+
           <% end %>
         </ul>
       </div><!-- /.navbar-collapse -->
