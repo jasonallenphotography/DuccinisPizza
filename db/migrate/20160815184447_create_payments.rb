@@ -4,8 +4,7 @@ class CreatePayments < ActiveRecord::Migration
       t.string :first_name
       t.string :last_name
       t.string :last4
-      t.decimal12 :amount
-      t.decimal3 :amount
+      t.decimal :amount, precision: 12, scale: 3
       t.boolean :success
       t.string :authorization_code
 
